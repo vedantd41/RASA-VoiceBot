@@ -91,9 +91,6 @@ actions:
     - action_check_location
     - action_check_contact
     - action_confirm_contact
-    - action_speak_intent
-    - action_get_song
-    - action_get_location
 
 session_config:
     session_expiration_time: 60

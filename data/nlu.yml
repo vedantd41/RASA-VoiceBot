@@ -36,11 +36,6 @@ nlu:
           - of course
           - that sounds good
           - correct
-    # - intent: confirm_input
-    #   examples: |
-    #     - [yes](input_confirmation)
-    #     - [ya](input_confirmation)
-    #     - [yessir](input_confirmation)
 
     - intent: deny
       examples: |

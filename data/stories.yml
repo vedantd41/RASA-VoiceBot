@@ -14,12 +14,9 @@ stories:
       steps:
           - intent: play_song
           - action: utter_which_song
-          # - action: action_speak_intent
-          # - action: action_get_song
           - intent: input_song
           - action: action_check_song
           - action: utter_confirm_song
-          # - action: action_speak_intent
           - intent: affirm
           - action: action_confirm_song
 
@@ -27,12 +24,9 @@ stories:
       steps:
           - intent: open_maps
           - action: utter_which_location
-          # - action: action_speak_intent
-          # - action: action_get_location
           - intent: input_location
           - action: action_check_location
           - action: utter_confirm_location
-          # - action: action_speak_intent
           - intent: affirm
           - action: action_confirm_location
 
@@ -40,10 +34,8 @@ stories:
       steps:
           - intent: call person
           - action: utter_which_contact
-          # - action: action_speak_intent
           - intent: input_contact
           - action: action_check_contact
           - action: utter_confirm_contact
-          # - action: action_speak_intent
           - intent: affirm
           - action: action_confirm_contact

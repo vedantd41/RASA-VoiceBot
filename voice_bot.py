@@ -5,15 +5,13 @@
 
 import requests
 import speech_recognition as sr  # import the library
-import subprocess
-from gtts import gTTS
 import pyttsx3
 
 
 def tts(text):
     engine = pyttsx3.init()
     voices = engine.getProperty("voices")
-    engine.setProperty("voice", voices[1].id)  # set the voice to a male voice
+    engine.setProperty("voice", voices[0].id)  # set the voice to a male voice
     engine.setProperty("rate", 150)  # set the speaking rate (words per minute)
     engine.setProperty("volume", 1.0)  # set the volume level (0 to 1)
     engine.setProperty("voice", "en")
