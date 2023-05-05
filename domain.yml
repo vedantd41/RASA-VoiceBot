@@ -1,0 +1,100 @@
+version: "3.1"
+
+intents:
+    - greet
+    - goodbye
+    - affirm
+    - deny
+    - bot_challenge
+    - play_song
+    - input_song
+    - open_maps
+    - input_location
+    - call person
+    - input_contact
+    - confirm_input
+
+entities:
+    - song_name
+    - location_name
+    - contact_name
+    - input_confirmation
+
+slots:
+    song_name:
+        type: text
+        mappings:
+            - type: from_entity
+              entity: song_name
+
+    input_confirmation:
+        type: text
+        mappings:
+            - type: from_text
+
+    location_name:
+        type: text
+        mappings:
+            - type: from_entity
+              entity: location_name
+
+    contact_name:
+        type: text
+        mappings:
+            - type: from_entity
+              entity: contact_name
+
+responses:
+    utter_greet:
+        - text: "Hey! How are you?"
+
+    utter_goodbye:
+        - text: "Bye"
+
+    utter_iamabot:
+        - text: "I am a bot, powered by Rasa."
+
+    utter_which_song:
+        - text: "Which song do you want to play?"
+
+    utter_confirm_song:
+        - text: "Is {song_name} the song you want to hear?"
+
+    utter_which_location:
+        - text: "Which location do you want to search?"
+
+    utter_confirm_location:
+        - text: "Is {location_name} the location you chose?"
+
+    utter_which_contact:
+        - text: "Which person do you want to call?"
+
+    utter_confirm_contact:
+        - text: "Is {contact_name} the person you want to call?"
+
+    utter_apology:
+        - text: "Sorry I did not quite get it. Please repeat."
+
+    utter_music_slots:
+        - text: "You chose the song {song_name}"
+
+    utter_submit_song:
+        - text: "I will now play the song via the SpotifyAPI"
+
+actions:
+    - action_call_spotify_api
+    - action_call_maps_api
+    - action_call_contacts_api
+    - action_check_song
+    - action_confirm_song
+    - action_confirm_location
+    - action_check_location
+    - action_check_contact
+    - action_confirm_contact
+    - action_speak_intent
+    - action_get_song
+    - action_get_location
+
+session_config:
+    session_expiration_time: 60
+    carry_over_slots_to_new_session: true

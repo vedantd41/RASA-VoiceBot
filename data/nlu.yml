@@ -1,0 +1,154 @@
+version: "3.1"
+
+nlu:
+    - intent: greet
+      examples: |
+          - hey
+          - hello
+          - hi
+          - hello there
+          - good morning
+          - good evening
+          - moin
+          - hey there
+          - let's go
+          - hey dude
+          - goodmorning
+          - goodevening
+          - good afternoon
+    - intent: goodbye
+      examples: |
+          - cu
+          - good by
+          - cee you later
+          - good night
+          - bye
+          - goodbye
+          - have a nice day
+          - see you around
+          - bye bye
+          - see you later
+    - intent: affirm
+      examples: |
+          - yes
+          - y
+          - indeed
+          - of course
+          - that sounds good
+          - correct
+    # - intent: confirm_input
+    #   examples: |
+    #     - [yes](input_confirmation)
+    #     - [ya](input_confirmation)
+    #     - [yessir](input_confirmation)
+
+    - intent: deny
+      examples: |
+          - no
+          - n
+          - never
+          - I don't think so
+          - don't like that
+          - no way
+          - not really
+    - intent: bot_challenge
+      examples: |
+          - are you a bot?
+          - are you a human?
+          - am I talking to a bot?
+          - am I talking to a human?
+    - intent: play_song
+      examples: |
+          - Lets play some music
+          - Open Spotify 
+          - Music please
+          - Music
+          - Songs
+          - Spotify
+          - spotify
+          - play music
+          - music 
+          - songs please
+          - Lets have some music
+          - play songs
+
+    - intent: input_song
+      examples: |
+          - [paradise](song_name)
+          - [stan](song_name)
+          - [endless](song_name)
+          - [would that i](song_name)
+          - [burn the house down](song_name)
+          - [ophelia](song_name)
+          - [carmen](song_name)
+          - [pamela](song_name)
+          - [sunlight](song_name)
+          - [berzerk](song_name)
+          - [spacebound](song_name)
+          - [love the way you lie](song_name)
+          - [not afraid](song_name)
+          - [99 problems](song_name)
+          - [ke$ha](song_name)
+          - [in da'club](song_name)
+          - [take me to church](song_name)
+          - [arsonists lullaby](song_name)
+          - [no love](song_name)
+          - [rap god](song_name)
+          - [guns blazing](song_name)
+    - intent: open_maps
+      examples: |
+          - Maps
+          - Navigation
+          - Google Maps
+          - Location 
+          - Find this location
+          - Where am I?
+          - Open google maps
+          - maps
+          - open maps
+          - open location
+          - gmaps
+          - google maps
+          - gps
+          - GPS
+    - intent: input_location
+      examples: |
+          - [Pune](location_name)
+          - [Mumbai](location_name)
+          - [Nagpur](location_name)
+          - [Delhi](location_name)
+          - [Nashik](location_name)
+          - [Paris](location_name)
+          - [Berlin](location_name)
+          - [London](location_name)
+          - [Manchester](location_name)
+          - [Sydney](location_name)
+          - [Amsterdam](location_name)
+          - [Chennai](location_name)
+          - [New York](location_name)
+    - intent: call person
+      examples: |
+          - Call
+          - Phone
+          - Open phone
+          - Contacts
+          - open contacts
+          - call logs
+          - dial
+          - talk
+          - call
+          - mobile
+          - contacts
+          - contact list
+          - recent contacts
+    - intent: input_contact
+      examples: |
+          - [Aditya](contact_name)
+          - [Aniket](contact_name)
+          - [Yash](contact_name)
+          - [Vedant](contact_name)
+          - [Mason](contact_name)
+          - [Connor](contact_name)
+          - [James](contact_name)
+          - [Nick](contact_name)
+          - [Frank](contact_name)
