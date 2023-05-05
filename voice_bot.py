@@ -9,11 +9,11 @@ import subprocess
 from gtts import gTTS
 import pyttsx3
 
-# sender = input("What is your name?\n")
-
 
 def tts(text):
     engine = pyttsx3.init()
+    voices = engine.getProperty("voices")
+    engine.setProperty("voice", voices[1].id)  # set the voice to a male voice
     engine.setProperty("rate", 150)  # set the speaking rate (words per minute)
     engine.setProperty("volume", 1.0)  # set the volume level (0 to 1)
     engine.setProperty("voice", "en")
@@ -28,22 +28,20 @@ r = requests.post(
     "http://localhost:5002/webhooks/rest/webhook", json={"message": "Hello"}
 )
 
-# print("Bot says, ", end=" ")
-# for i in r.json():
-#     bot_message = i["text"]
-#     print(f"{bot_message}")
-
-# myobj = gTTS(text=bot_message)
-# myobj.save("welcome.mp3")
-# print("saved")
-# Playing the converted file
-# subprocess.call(["mpg321", "welcome.mp3", "--play-and-exit"])
-
-initial_msg = "Hi, this is Rasa!"
+initial_msg = (
+    "Hi, this is Rasa! How may I help you?"  # initial message after starting the bot
+)
 print(initial_msg)
 tts(initial_msg)
-stop_list = ["bye", "thanks", "goodbye", "Bye", "Goodbye", "Thanks"]
-while bot_message not in stop_list:
+stop_list = [
+    "bye",
+    "thanks",
+    "goodbye",
+    "Bye",
+    "Goodbye",
+    "Thanks",
+]  # bot stops if one of the words is said
+while message not in stop_list:
     r = sr.Recognizer()  # initialize recognizer
     with sr.Microphone() as source:  # mention source it will be either Microphone or audio files.
         print("Speak Anything :")
@@ -58,22 +56,18 @@ while bot_message not in stop_list:
             print(
                 "Sorry could not recognize your voice"
             )  # In case of voice not recognized  clearly
-    if len(message) == 0:
-        continue
-    print("Sending message now")
+            message = ""  # reset message if input not obtained
 
-    r = requests.post(
-        "http://localhost:5002/webhooks/rest/webhook", json={"message": message}
-    )
+    if len(message) != 0:
+        print("Sending message now")
 
-    print("Bot says, ", end=" ")
-    for i in r.json():
-        bot_message = i["text"]
-        print(f"{bot_message}")
+        r = requests.post(
+            "http://localhost:5002/webhooks/rest/webhook", json={"message": message}
+        )
 
-    tts(bot_message)
+        print("Bot says:  ", end=" ")
+        for i in r.json():
+            bot_message = i["text"]
+            print(f"{bot_message}")
 
-    # myobj = gTTS(text=bot_message)
-    # myobj.save("welcome.mp3")
-    # Playing the converted file
-    # subprocess.call(["mpg321", "welcome.mp3", "--play-and-exit"])
+        tts(bot_message)  # Read Bot's message aloud
