@@ -30,6 +30,13 @@ rules:
           - intent: affirm
           - action: action_confirm_location
 
+    # - rule: trigger api weather
+    #   steps:
+    #       - action: action_check_weather_location
+    #       - action: utter_confirm_weather_location
+    #       - intent: affirm
+    #       - action: action_confirm_weather_location
+
     - rule: trigger api contact
       steps:
           - action: action_check_contact

@@ -13,12 +13,15 @@ intents:
     - call person
     - input_contact
     - confirm_input
+    - get_weather
+    - input_weather_location
 
 entities:
     - song_name
     - location_name
     - contact_name
     - input_confirmation
+    - weather_location_name
 
 slots:
     song_name:
@@ -43,6 +46,12 @@ slots:
         mappings:
             - type: from_entity
               entity: contact_name
+
+    weather_location_name:
+        type: text
+        mappings:
+            - type: from_entity
+              entity: weather_location_name
 
 responses:
     utter_greet:
@@ -78,19 +87,25 @@ responses:
     utter_music_slots:
         - text: "You chose the song {song_name}"
 
-    utter_submit_song:
-        - text: "I will now play the song via the SpotifyAPI"
+    utter_which_weather_location:
+        - text: "Which location's weather would you like to know?"
+
+    utter_confirm_weather_location:
+        - text: "Is {weather_location_name} the location you chose?"
 
 actions:
     - action_call_spotify_api
     - action_call_maps_api
     - action_call_contacts_api
+    - action_call_weather_api
     - action_check_song
     - action_confirm_song
     - action_confirm_location
     - action_check_location
     - action_check_contact
     - action_confirm_contact
+    - action_check_weather_location
+    - action_confirm_weather_location
 
 session_config:
     session_expiration_time: 60

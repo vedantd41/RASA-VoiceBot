@@ -1,8 +1,5 @@
-import requests
 import speech_recognition as sr  # import the library
-import subprocess
 from gtts import gTTS
-import pyttsx3
 
 trigger_words = ["coffee", "Coffee"]
 message = ""

@@ -147,3 +147,29 @@ nlu:
           - [James](contact_name)
           - [Nick](contact_name)
           - [Frank](contact_name)
+
+    - intent: get_weather
+      examples: |
+          - What's the weather like
+          - weather forecast
+          - tell me the weather conditions
+          - get weather
+          - Show weather
+          - What is the forecast 
+          - show forecast
+
+    - intent: input_weather_location
+      examples: |
+          - [Pune](location_name)
+          - [Mumbai](location_name)
+          - [Nagpur](location_name)
+          - [Delhi](location_name)
+          - [Nashik](location_name)
+          - [Paris](location_name)
+          - [Berlin](location_name)
+          - [London](location_name)
+          - [Manchester](location_name)
+          - [Sydney](location_name)
+          - [Amsterdam](location_name)
+          - [Chennai](location_name)
+          - [New York](location_name)
