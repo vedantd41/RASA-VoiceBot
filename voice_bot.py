@@ -1,8 +1,3 @@
-## Run this command in terminal  before executing this program
-## rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml
-## and also run this in seperate terminal
-## rasa run actions
-
 import requests
 import speech_recognition as sr  # import the library
 import pyttsx3
@@ -65,7 +60,8 @@ while message not in stop_list:
 
         print("Bot says:  ", end=" ")
         for i in r.json():
-            bot_message = i["text"]
+            bot_message += i["text"]
             print(f"{bot_message}")
 
         tts(bot_message)  # Read Bot's message aloud
+        bot_message=""

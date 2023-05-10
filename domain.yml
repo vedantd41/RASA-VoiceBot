@@ -14,14 +14,15 @@ intents:
     - input_contact
     - confirm_input
     - get_weather
-    - input_weather_location
+    # - input_weather_location
+    - get_news
 
 entities:
     - song_name
     - location_name
     - contact_name
+    # - weather_location_name
     - input_confirmation
-    - weather_location_name
 
 slots:
     song_name:
@@ -47,11 +48,11 @@ slots:
             - type: from_entity
               entity: contact_name
 
-    weather_location_name:
-        type: text
-        mappings:
-            - type: from_entity
-              entity: weather_location_name
+    # weather_location_name:
+    #     type: text
+    #     mappings:
+    #         - type: from_entity
+    #           entity: weather_location_name
 
 responses:
     utter_greet:
@@ -64,19 +65,19 @@ responses:
         - text: "I am a bot, powered by Rasa."
 
     utter_which_song:
-        - text: "Which song do you want to play?"
+        - text: "Which song would you like to play?"
 
     utter_confirm_song:
         - text: "Is {song_name} the song you want to hear?"
 
     utter_which_location:
-        - text: "Which location do you want to search?"
+        - text: "Which location would you like to search?"
 
     utter_confirm_location:
         - text: "Is {location_name} the location you chose?"
 
     utter_which_contact:
-        - text: "Which person do you want to call?"
+        - text: "Which person would you like to call?"
 
     utter_confirm_contact:
         - text: "Is {contact_name} the person you want to call?"
@@ -91,7 +92,13 @@ responses:
         - text: "Which location's weather would you like to know?"
 
     utter_confirm_weather_location:
-        - text: "Is {weather_location_name} the location you chose?"
+        - text: "Is {location_name} the region you chose?"
+
+    utter_getting_news:
+        - text: "Here are the latest news updates!"
+
+    utter_want_more_news:
+        - text: ". Would you like to hear more news stories?"
 
 actions:
     - action_call_spotify_api
@@ -106,6 +113,8 @@ actions:
     - action_confirm_contact
     - action_check_weather_location
     - action_confirm_weather_location
+    - action_call_news_api
+    - action_get_more_news
 
 session_config:
     session_expiration_time: 60

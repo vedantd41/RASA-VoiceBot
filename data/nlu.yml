@@ -6,6 +6,7 @@ nlu:
           - hey
           - hello
           - hi
+          - hai
           - hello there
           - good morning
           - good evening
@@ -16,6 +17,7 @@ nlu:
           - goodmorning
           - goodevening
           - good afternoon
+
     - intent: goodbye
       examples: |
           - cu
@@ -28,6 +30,7 @@ nlu:
           - see you around
           - bye bye
           - see you later
+
     - intent: affirm
       examples: |
           - yes
@@ -46,12 +49,14 @@ nlu:
           - don't like that
           - no way
           - not really
+
     - intent: bot_challenge
       examples: |
           - are you a bot?
           - are you a human?
           - am I talking to a bot?
           - am I talking to a human?
+
     - intent: play_song
       examples: |
           - Lets play some music
@@ -90,6 +95,7 @@ nlu:
           - [no love](song_name)
           - [rap god](song_name)
           - [guns blazing](song_name)
+
     - intent: open_maps
       examples: |
           - Maps
@@ -106,21 +112,23 @@ nlu:
           - google maps
           - gps
           - GPS
-    - intent: input_location
-      examples: |
-          - [Pune](location_name)
-          - [Mumbai](location_name)
-          - [Nagpur](location_name)
-          - [Delhi](location_name)
-          - [Nashik](location_name)
-          - [Paris](location_name)
-          - [Berlin](location_name)
-          - [London](location_name)
-          - [Manchester](location_name)
-          - [Sydney](location_name)
-          - [Amsterdam](location_name)
-          - [Chennai](location_name)
-          - [New York](location_name)
+
+    # - intent: input_weather_location
+    #   examples: |
+    #       - [Pune](weather_location_name)
+    #       - [Mumbai](weather_location_name)
+    #       - [Nagpur](weather_location_name)
+    #       - [Delhi](weather_location_name)
+    #       - [Nashik](weather_location_name)
+    #       - [Paris](weather_location_name)
+    #       - [Berlin](weather_location_name)
+    #       - [London](weather_location_name)
+    #       - [Manchester](weather_location_name)
+    #       - [Sydney](weather_location_name)
+    #       - [Amsterdam](weather_location_name)
+    #       - [Chennai](weather_location_name)
+    #       - [New York](weather_location_name)
+
     - intent: call person
       examples: |
           - Call
@@ -136,6 +144,7 @@ nlu:
           - contacts
           - contact list
           - recent contacts
+
     - intent: input_contact
       examples: |
           - [Aditya](contact_name)
@@ -158,7 +167,7 @@ nlu:
           - What is the forecast 
           - show forecast
 
-    - intent: input_weather_location
+    - intent: input_location
       examples: |
           - [Pune](location_name)
           - [Mumbai](location_name)
@@ -173,3 +182,12 @@ nlu:
           - [Amsterdam](location_name)
           - [Chennai](location_name)
           - [New York](location_name)
+
+    - intent: get_news
+      examples: |
+          - What's the news today
+          - Get me latest news updates
+          - What are today's headlines
+          - news
+          - headlines
+          - news updates

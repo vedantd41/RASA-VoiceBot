@@ -10,6 +10,15 @@ stories:
           - intent: goodbye
           - action: utter_goodbye
 
+    - story: news
+      steps:
+          - intent: get_news
+          - action: utter_getting_news
+          - action: action_call_news_api
+          - action: utter_want_more_news
+          - intent: affirm
+          - action: action_get_more_news
+
     - story: play music confirmation
       steps:
           - intent: play_song
@@ -34,7 +43,8 @@ stories:
       steps:
           - intent: get_weather
           - action: utter_which_weather_location
-          - intent: input_weather_location
+          #- intent: input_weather_location
+          - intent: input_location
           - action: action_check_weather_location
           - action: utter_confirm_weather_location
           - intent: affirm
