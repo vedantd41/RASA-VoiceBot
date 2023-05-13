@@ -6,10 +6,12 @@ with open("interaction.txt", "w") as f:
     pass
 lines = []
 
+
 def render(lines):
     with open("interaction.txt", "w") as file:
         file.writelines(lines)
-    lines=[]
+    lines = []
+
 
 def tts(text):
     engine = pyttsx3.init()
@@ -41,6 +43,8 @@ tts(initial_msg)
 stop_list = [
     "bye",
     "thanks",
+    "thank you",
+    "ok thank you",
     "goodbye",
     "Bye",
     "Goodbye",
@@ -64,9 +68,9 @@ while message not in stop_list:
 
         except:
             print("Sorry could not recognize your voice")
-            lines.append("Sorry could not recognize your voice")
-            lines.append("\n")
-            render(lines)
+            # lines.append("Sorry could not recognize your voice")
+            # lines.append("\n")
+            # render(lines)
             # In case of voice not recognized  clearly
             message = ""  # reset message if input not obtained
 
@@ -88,7 +92,6 @@ while message not in stop_list:
         lines.append(bot_message)
         lines.append("\n")
         render(lines)
-
 
         bot_message = ""
 

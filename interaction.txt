@@ -1,1 +1,9 @@
 Hi, this is Rasa! How may I help you?
+You said : hello
+Bot says: Hey! How are you?
+You said : I am good are you a bot
+Bot says: I am a bot, powered by Rasa.
+You said : ok thank you
+Bot says: Bye
+You said : Salman movie
+Bot says: Is Salman movie the song you want to hear?

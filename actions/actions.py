@@ -12,11 +12,9 @@ import webbrowser as web
 import requests
 
 # news API
-
-
 def getNews(num):
     country = "in"
-    api_key = "e6e0276797da4c2aac7f6d1b2f008e7c"
+    api_key = ""
     headlines_url = (
         f"http://newsapi.org/v2/top-headlines?country={country}&apiKey={api_key}"
     )
@@ -47,11 +45,9 @@ def getNews(num):
 
 
 # spotify API
-
-
 def playSong(user_input):
-    client_id = "b98db0c89cf143a7bba3370cf13b2b96"
-    client_secret = "eef5b8588cee4e06b2166da5795e3b2f"
+    client_id = ""
+    client_secret = ""
     client_credentials_manager = SpotifyClientCredentials(client_id, client_secret)
     spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
@@ -65,10 +61,8 @@ def playSong(user_input):
 
 
 # weather API
-
-
 def getWeather(location):
-    api_key = "da562f52746c4e6687e61904230705"
+    api_key = ""
 
     # API endpoint for current weather
     current_url = (
@@ -122,8 +116,6 @@ def getWeather(location):
 
 
 # get user's confirmation
-
-
 def getConfirmation(user_input):
     resp_list = ["yes", "Yes", "yeah", "Yeah", "Yup"]
 
@@ -134,8 +126,6 @@ def getConfirmation(user_input):
 
 
 # song actions
-
-
 class ActionCheckSong(Action):
     def name(self) -> Text:
         return "action_check_song"
@@ -193,8 +183,6 @@ class ActionCallSpotifyAPI(Action):
 
 
 # map actions
-
-
 class ActionCheckLocation(Action):
     def name(self) -> Text:
         return "action_check_location"
@@ -253,8 +241,6 @@ class ActionCallMapsAPI(Action):
 
 
 # contacts actions
-
-
 class ActionConfirmContact(Action):
     def name(self) -> Text:
         return "action_confirm_contact"
@@ -309,8 +295,6 @@ class ActionCallContactsAPI(Action):
 
 
 # weather actions
-
-
 class ActionCheckWeatherLocation(Action):
     def name(self) -> Text:
         return "action_check_weather_location"
@@ -382,8 +366,6 @@ class ActionCallWeatherAPI(Action):
 
 
 # news actions
-
-
 class ActionCallNewsAPI(Action):
     def name(self) -> Text:
         return "action_call_news_api"

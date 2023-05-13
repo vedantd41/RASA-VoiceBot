@@ -30,6 +30,9 @@ nlu:
           - see you around
           - bye bye
           - see you later
+          - thank you
+          - thanks
+          - thx
 
     - intent: affirm
       examples: |
@@ -112,22 +115,6 @@ nlu:
           - google maps
           - gps
           - GPS
-
-    # - intent: input_weather_location
-    #   examples: |
-    #       - [Pune](weather_location_name)
-    #       - [Mumbai](weather_location_name)
-    #       - [Nagpur](weather_location_name)
-    #       - [Delhi](weather_location_name)
-    #       - [Nashik](weather_location_name)
-    #       - [Paris](weather_location_name)
-    #       - [Berlin](weather_location_name)
-    #       - [London](weather_location_name)
-    #       - [Manchester](weather_location_name)
-    #       - [Sydney](weather_location_name)
-    #       - [Amsterdam](weather_location_name)
-    #       - [Chennai](weather_location_name)
-    #       - [New York](weather_location_name)
 
     - intent: call person
       examples: |

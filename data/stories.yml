@@ -43,7 +43,6 @@ stories:
       steps:
           - intent: get_weather
           - action: utter_which_weather_location
-          #- intent: input_weather_location
           - intent: input_location
           - action: action_check_weather_location
           - action: utter_confirm_weather_location
