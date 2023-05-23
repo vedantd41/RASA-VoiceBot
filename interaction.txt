@@ -1,9 +1,13 @@
 Hi, this is Rasa! How may I help you?
-You said : hello
-Bot says: Hey! How are you?
-You said : I am good are you a bot
-Bot says: I am a bot, powered by Rasa.
-You said : ok thank you
-Bot says: Bye
-You said : Salman movie
-Bot says: Is Salman movie the song you want to hear?
+You said : give me weather update
+Bot says: Which location's weather would you like to know?
+You said : Pune
+Bot says: Is Pune the region you chose?
+You said : yes
+Bot says: The weather forecast for tomorrow in Pune is Sunny. The average temperature is 31.2 Celsius. The average humidity is 40.0%.
+You said : calling
+Bot says: Which person would you like to call?
+You said : John
+Bot says: Is John the person you want to call?
+You said : yes
+Bot says: Now calling the Contacts API to call the person John
