@@ -14,7 +14,7 @@ import requests
 # news API
 def getNews(num):
     country = "in"
-    api_key = "e6e0276797da4c2aac7f6d1b2f008e7c"
+    api_key = ""
     headlines_url = (
         f"http://newsapi.org/v2/top-headlines?country={country}&apiKey={api_key}"
     )
@@ -46,8 +46,8 @@ def getNews(num):
 
 # spotify API
 def playSong(user_input):
-    client_id = "b98db0c89cf143a7bba3370cf13b2b96"
-    client_secret = "eef5b8588cee4e06b2166da5795e3b2f"
+    client_id = ""
+    client_secret = ""
     client_credentials_manager = SpotifyClientCredentials(client_id, client_secret)
     spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
@@ -62,7 +62,7 @@ def playSong(user_input):
 
 # weather API
 def getWeather(location):
-    api_key = "da562f52746c4e6687e61904230705"
+    api_key = ""
 
     # API endpoint for current weather
     current_url = (
